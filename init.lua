@@ -2,7 +2,7 @@
 require('core')
 
 -- plugins
--- require('plugin')
+require('plugin')
 
 -- ui
 require('ui')

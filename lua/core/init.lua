@@ -1,6 +1,9 @@
 local utils = require('utils')
 local fn = vim.fn
 
+require('core.settings')
+require('core.keymaps')
+
 vim.g.python_host_prog = '/usr/bin/python'
 vim.g.python3_host_prog = '/usr/local/bin/python3'
 
@@ -12,22 +15,21 @@ if fn.empty(fn.glob(install_path)) > 0 then
   utils.run('packadd packer.nvim')
 end
 
-require('core.settings')
-require('core.keymaps')
+local packer_ok, packer = pcall(require, 'packer')
+if not packer_ok then
+  return
+end
 
-require('packer').startup({
-  function(use)
-    use 'wbthomason/packer.nvim'
-  end,
-  config = {
-    max_jobs = 16,
-    git = {
-      default_url_format = 'https://hub.fastgit.org/%s'
-    },
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'single'})
-      end
-    }
+packer.init({
+  max_jobs = 16,
+  git = {
+    default_url_format = 'https://hub.fastgit.org/%s'
+  },
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single'})
+    end
   }
 })
+
+utils.run('autocmd BufWritePost plugins.lua PackerCompile')
