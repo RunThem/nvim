@@ -1,4 +1,9 @@
-require('nvim-treesitter.configs').setup{
+local M = {}
+
+function M.setup()
+local nTree = require('nvim-treesitter.configs')
+
+nTree.setup({
   ensure_installed = {
     'c',
     'cpp',
@@ -14,4 +19,7 @@ require('nvim-treesitter.configs').setup{
   highlight = {
     enable = true,
   },
-}
+})
+end
+
+return M

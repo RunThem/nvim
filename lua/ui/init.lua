@@ -1,5 +1,7 @@
 local utils = require('utils')
 
+require('zephyr')
+
 local indent = 2
 
 utils.opt('number', true)             -- 设置行号

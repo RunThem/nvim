@@ -70,80 +70,64 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/LuaSnip"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/LuaSnip"
   },
   ["cmp-nvim-lsp"] = {
-    after_files = { "/home/iccy/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lsp"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
   },
   cmp_luasnip = {
-    after_files = { "/home/iccy/.local/share/nvim/site/pack/packer/opt/cmp_luasnip/after/plugin/cmp_luasnip.lua" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/cmp_luasnip"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
   },
   kommentary = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/kommentary"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/kommentary"
   },
   ["nvim-autopairs"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/nvim-autopairs"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/nvim-cmp"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lsp-installer"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/nvim-lsp-installer"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/iccy/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/plenary.nvim"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["popup.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/popup.nvim"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["todo-comments.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/opt/todo-comments.nvim"
+    loaded = true,
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
   },
   ["zephyr-nvim"] = {
     loaded = true,
