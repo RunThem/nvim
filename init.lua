@@ -1,23 +1,23 @@
--- install packer.nvim
+-- initialization
 require('core')
 
 -- Sensiable defaults
-require('core.settings')
+-- require('core.settings')
 
 -- keymaps
-require('core.keymaps')
+-- require('core.keymaps')
 
 -- plugins
-require('plugin')
+-- require('plugin')
 
 -- ui
-require('ui')
+-- require('ui')
 
 -- theme
-require('zephyr')
+-- require('zephyr')
 
 -- lsp
-require('lang')
+-- require('lang')
 
 
   

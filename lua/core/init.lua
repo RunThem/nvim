@@ -9,19 +9,22 @@ if fn.empty(fn.glob(install_path)) > 0 then
   utils.run('packadd packer.nvim')
 end
 
-require('packer').startup({
-  function(use)
-    use 'wbthomason/packer.nvim'
-  end,
-  config = {
-    max_jobs = 16,
-    git = {
-      default_url_format = 'https://hub.fastgit.org/%s'
-    },
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'single'})
-      end
-    }
-  }
-})
+require('core.settings')
+require('core.keymaps')
+
+-- require('packer').startup({
+--   function(use)
+--     use 'wbthomason/packer.nvim'
+--   end,
+--   config = {
+--     max_jobs = 16,
+--     git = {
+--       default_url_format = 'https://hub.fastgit.org/%s'
+--     },
+--     display = {
+--       open_fn = function()
+--         return require('packer.util').float({ border = 'single'})
+--       end
+--     }
+--   }
+-- })

@@ -1,7 +1,8 @@
 local utils = require('utils')
 
-utils.run('syntax enable')
-utils.run('filetype plugin indent on')
+-- 这两项耗时近40ms
+-- utils.run('syntax enable')
+-- utils.run('filetype plugin indent on')
 
 utils.opt('autoindent', true)                   -- C语言格式缩进
 utils.opt('hidden', true)                       -- 隐藏buffer
