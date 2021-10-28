@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Hello_t	s.c	/^} Hello_t, *Hello_p$/;"	t	typeref:struct:_hello	file:
+['<S-Tab>'] 	lua/plugin/config/nvim-cmp.lua	/^    ['<S-Tab>'] = function(fallback)$/;"	f
+['<Tab>'] 	lua/plugin/config/nvim-cmp.lua	/^    ['<Tab>'] = function(fallback)$/;"	f
+_hello	s.c	/^typedef struct _hello {$/;"	s	file:
+class	s.c	/^  int class;$/;"	m	struct:_hello	file:
+expand 	lua/plugin/config/nvim-cmp.lua	/^    expand = function(args)$/;"	f
+if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~	plugin/packer_compiled.lua	/^if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then$/;"	f
+local no_errors, error_msg 	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+lsp_config.on_attach 	lua/plugin/config/nvim-lspconfig.lua	/^lsp_config.on_attach = function(_, bufnr)$/;"	f
+main	lua/plugin/c.c	/^int main() {$/;"	f
+main	s.c	/^int main() {$/;"	f
+message	s.c	/^  char message;$/;"	m	struct:_hello	file:
+open_fn 	lua/core/init.lua	/^      open_fn = function()$/;"	f
+save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+time 	plugin/packer_compiled.lua	/^    time = function(chunk, start) end$/;"	f
+time 	plugin/packer_compiled.lua	/^    time = function(chunk, start)$/;"	f
+try_loadstring	plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f
+utils.buf_map	lua/utils/init.lua	/^function utils.buf_map(buf, mode, lhs, rhs, opts)$/;"	f
+utils.map	lua/utils/init.lua	/^function utils.map(mode, lhs, rhs, opts)$/;"	f
+utils.opt	lua/utils/init.lua	/^function utils.opt(key, value)$/;"	f
+utils.run	lua/utils/init.lua	/^function utils.run(cmd)$/;"	f
