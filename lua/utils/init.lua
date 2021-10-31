@@ -1,6 +1,6 @@
-local utils = {}
+local M = {}
 
-function utils.opt(key, value)
+function M.opt(key, value)
   if value == true or value == false then
     vim.cmd("set " .. key)
   else
@@ -8,12 +8,8 @@ function utils.opt(key, value)
   end
 end
 
-
-function utils.map(mode, lhs, rhs, opts)
-  local options = {
-    noremap = true,
-    silent = true,
-  }
+function M.map(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
 
   if opts ~= nil then
     options = vim.tbl_extend('force', options, opts)
@@ -22,21 +18,27 @@ function utils.map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-function utils.buf_map(buf, mode, lhs, rhs, opts)
-  local options = {
-    noremap = true,
-    silent = true,
-  }
+function M.buf_map(buf, mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
 
   if opts ~= nil then
     options = vim.tbl_extend('force', options, opts)
   end
 
-  vim.api.nvim_buf_set_keymap(buf, mode,lhs, rhs, options)
+  vim.api.nvim_buf_set_keymap(buf, mode, lhs, rhs, options)
 end
 
-function utils.run(cmd)
+function M.run(cmd)
   vim.cmd(cmd)
 end
 
-return utils
+function M.cmd(autocmds, name)
+  vim.cmd('augroup' .. name)
+  vim.cmd('autocmd!')
+  for _, autocmd in ipairs(autocmds) do
+    vim.cmd('autocmd' .. table.concat(autocmd, ' '))
+  end
+  vim.cmd('augroup END')
+end
+
+return M

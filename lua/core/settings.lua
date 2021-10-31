@@ -1,8 +1,9 @@
 local utils = require('utils')
 
 -- 这两项耗时近40ms
--- utils.run('syntax enable')
--- utils.run('filetype plugin indent on')
+utils.run('syntax on')
+utils.run('syntax enable')
+utils.run('filetype plugin indent on')
 
 utils.opt('autoindent', true)                   -- C语言格式缩进
 utils.opt('hidden', true)                       -- 隐藏buffer
@@ -34,7 +35,7 @@ utils.opt('nobackup', true)                     -- 不允许备份文件
 utils.opt('nowritebackup', true)                -- 不允许保存时备份
 utils.opt('noswapfile', true)                   -- 禁用交换文件
 utils.opt('noundofile', true)                   -- 禁用undo文件
-utils.opt('completeopt', 'menuone,noselect')  -- compe
+-- utils.opt('completeopt', 'menuone,noselect')    -- compe
 
 -- Highlight on yank
--- vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
+utils.run('au TextYankPost * lua vim.highlight.on_yank {on_visual = false}')

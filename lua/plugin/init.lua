@@ -1,202 +1,100 @@
-local utils =
-    require(
-    "utils"
-)
-local packer =
-    require(
-    "packer"
-)
+local packer = require('packer')
 
-function load(
-    plug)
-    return require(
-        "plugin.config." ..
-            plug
-    ).setup(
+-- :
+function load(plug, config)
+  local package_ok, _ = pcall(require, plug)
+  if not package_ok then
+    return function()
 
-    )
+    end
+  end
+  return require('plugin.config.' .. config).setup()
 end
 
 packer.startup(
-    {
-        function(
-            use)
-            -- 包管理
-            use(
-                {
-                    "wbthomason/packer.nvim"
-                }
-            )
-            -- 依赖
-            use(
-                {
-                    "kyazdani42/nvim-web-devicons"
-                }
-            )
-            use(
-                {
-                    "nvim-lua/popup.nvim"
-                }
-            )
-            use(
-                {
-                    "nvim-lua/plenary.nvim"
-                }
-            )
+  {
+    function(use)
+      -- 包管理
+      use({ 'wbthomason/packer.nvim' })
+      -- 依赖
+      use({ 'kyazdani42/nvim-web-devicons' })
+      use({ 'nvim-lua/popup.nvim' })
+      use({ 'nvim-lua/plenary.nvim' })
 
-            -- 配色
-            use(
-                {
-                    "glepnir/zephyr-nvim"
-                }
-            )
-            -- 语法高亮
-            use(
-                {
-                    "nvim-treesitter/nvim-treesitter",
-                    -- event = 'BufRead',
-                    run = ":TSUpdate",
-                    onfig = load(
-                        "nvim-treesitter"
-                    )
-                }
-            )
+      -- 配色
+      use({ 'glepnir/zephyr-nvim' })
+      -- 语法高亮
+      use(
+        {
+          'nvim-treesitter/nvim-treesitter',
+          run = ':TSUpdate',
+          config = load('nvim-treesitter', 'nvim-treesitter')
+        }
+      )
 
-            -- 智能括号
-            use(
-                {
-                    "windwp/nvim-autopairs",
-                    opt = false,
-                    -- config = require(config .. 'nvim-autopairs').setup()
-                    config = load(
-                        "nvim-autopairs"
-                    )
-                }
-            )
+      -- 智能括号
+      use({ 'windwp/nvim-autopairs', config = load('nvim-autopairs', 'nvim-autopairs') })
 
-            -- 文件树
-            use(
-                {
-                    "kyazdani42/nvim-tree.lua"
-                }
-            )
+      -- 文件树
+      use({ 'kyazdani42/nvim-tree.lua', config = load('nvim-tree', 'nvim-tree') })
 
-            -- 注释
-            use(
-                {
-                    "b3nj5m1n/kommentary"
-                }
-            )
+      -- 注释
+      use({ 'b3nj5m1n/kommentary', config = load('kommentary', 'kommentary') })
 
-            -- 快速移动
-            -- use 'ggandor/lightspeed.nvim'
+      -- 状态栏
+      -- use({ 'nvim-lualine/lualine.nvim', config = load('lualine', 'lualine') })
 
-            -- Todo清单
-            use(
-                {
-                    "folke/todo-comments.nvim"
-                }
-            )
+      -- 快速移动
+      -- use 'ggandor/lightspeed.nvim'
 
-            -- 格式化
-            use(
-                {
-                    "lukas-reineke/format.nvim",
-                    config = load(
-                        "format"
-                    )
-                }
-            )
+      -- Todo清单
+      use({ 'folke/todo-comments.nvim', config = load('todo-comments', 'todo-comments') })
 
-            -- LSP
-            use(
-                {
-                    "neovim/nvim-lspconfig"
-                }
-            ) -- Collection of configurations for built-in LSP client
-            use(
-                {
-                    "williamboman/nvim-lsp-installer"
-                }
-            )
-            use(
-                {
-                    "hrsh7th/nvim-cmp",
-                    requires = {
-                        "hrsh7th/vim-vsnip",
-                        "hrsh7th/cmp-buffer",
-                        "hrsh7th/cmp-path",
-                        "hrsh7th/cmp-nvim-lsp",
-                        "hrsh7th/cmp-nvim-lua",
-                        "hrsh7th/cmp-vsnip",
-                        "hrsh7th/cmp-calc"
-                    }
-                }
-            ) -- Autocompletion plugin
-            use(
-                {
-                    "hrsh7th/cmp-nvim-lsp"
-                }
-            ) -- LSP source for nvim-cmp
-            use(
-                {
-                    "saadparwaiz1/cmp_luasnip"
-                }
-            ) -- Snippets source for nvim-cmp
-            use(
-                {
-                    "L3MON4D3/LuaSnip"
-                }
-            ) -- Snippets plugin
+      -- 格式化
+      use({ 'lukas-reineke/format.nvim', config = load('format', 'format') })
 
-            -- use 'folke/lsp-colors.nvim'
-            -- use 'HungryJoe/trouble.nvim'
-            -- use 'hrsh7th/vim-vsnip'
-            -- use 'hrsh7th/nvim-compe'
-            -- use 'onsails/lspkind-nvim'
-            -- symbols
-            -- Terminal
-            -- use 'akinsho/nvim-toggleterm.lua'
-            -- 缩进线
-            -- use 'lukas-reineke/indent-blankline.nvim'
+      -- LSP
+      use({ 'neovim/nvim-lspconfig' }) -- Collection of configurations for built-in LSP client
+      use(
+        {
+          'williamboman/nvim-lsp-installer',
+          config = load('nvim-lsp-installer', 'nvim-lsp-installer')
+        }
+      )
+      use({ 'L3MON4D3/LuaSnip' }) -- Snippets plugin
+      use(
+        {
+          'hrsh7th/nvim-cmp',
+          requires = {
+            'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-nvim-lua', 'hrsh7th/cmp-calc', 'LuaSnip'
+          },
+          config = load('cmp', 'nvim-cmp')
+        }
+      ) -- Autocompletion plugin
 
-            -- 模糊搜索
-            -- use 'nvim-telescope/telescope.nvim'
-            -- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-            -- use 'kevinhwang91/nvim-hlslens'
+      use({ 'saadparwaiz1/cmp_luasnip' }) -- Snippets source for nvim-cmp
 
-            -- git提示
-            -- use 'lewis6991/gitsigns.nvim'
+      -- use 'HungryJoe/trouble.nvim'
+      -- use 'onsails/lspkind-nvim'
+      -- symbols
+      -- Terminal
+      -- use 'akinsho/nvim-toggleterm.lua'
+      -- 缩进线
+      -- use 'lukas-reineke/indent-blankline.nvim'
 
-            -- 智能注释
-            -- 智能对齐
-            -- use 'junegunn/vim-easy-align'
-        end
-    }
+      -- 模糊搜索
+      use({ 'nvim-telescope/telescope.nvim', load('telescope', 'telescope') })
+      use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+      use({ 'kevinhwang91/nvim-hlslens' })
+
+      -- git提示
+      -- use 'lewis6991/gitsigns.nvim'
+
+      -- 智能对齐
+      -- use 'junegunn/vim-easy-align'
+    end
+  }
 )
 
--- utils.run('PackerInstall')
-packer.install(
-
-)
-
--- require('plugin.config.nvim-autopairs')
--- require('plugin.config.nvim-treesitter').setup()
-require(
-    "plugin.config.nvim-tree"
-)
-require(
-    "plugin.config.kommentary"
-)
-require(
-    "plugin.config.todo-comments"
-)
-require(
-    "plugin.config.nvim-lsp-installer"
-)
-require(
-    "plugin.config.nvim-lspconfig"
-)
-require(
-    "plugin.config.nvim-cmp"
-)
+packer.install()

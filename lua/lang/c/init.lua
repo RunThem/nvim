@@ -1,14 +1,14 @@
 local lsp = require('lspconfig')
-local lsp_config = require('plugin.config.nvim-lspconfig')
+local config = require('lang')
 
 lsp.clangd.setup {
   cmd = {
-    '/home/iccy/.local/share/nvim/lsp_servers/clangd/clangd',
+    config.path .. 'clangd/clangd',
     '--background-index',
     '--suggest-missing-includes',
     '--clang-tidy',
     '--header-insertion=iwyu',
   },
-  on_attach = lsp_config.on_attach,
-  capabilities = lsp_config.capabilities,
+  on_attach = config.lsp_config.on_attach,
+  capabilities = config.cmp_config.capabilities,
 }

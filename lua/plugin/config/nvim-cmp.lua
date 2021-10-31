@@ -1,45 +1,36 @@
-local luasnip = require('luasnip')
-local cmp = require('cmp')
+local M = {}
 
--- nvim-cmp setup
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
+M.capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol
+                                                               .make_client_capabilities())
+
+function M.setup()
+  vim.o.completeopt = 'menuone,noselect'
+
+  local snip = require('luasnip')
+  local cmp = require('cmp')
+
+  cmp.setup({
+    experimental = { ghost_text = false, custom_menu = true },
+    documentation = {
+      border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+     },
+    snippet = {
+      expand = function(args)
+        snip.lsp_expand(args.body)
+      end,
+     },
+    mapping = {
+      ['<Tab>'] = cmp.mapping.select_prev_item(),
+      ['<S-Tab>'] = cmp.mapping.select_next_item(),
+      ['<CR>'] = cmp.mapping.confirm({
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false,
+       }),
+     },
+    sources = { { name = 'nvim_lsp' },
+                { name = 'luasnip', opts = { use_show_condition = false } } },
+    completion = { completeopt = 'menu,menuone,noinsert' },
+   })
+end
+
+return M

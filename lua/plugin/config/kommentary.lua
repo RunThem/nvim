@@ -1,13 +1,17 @@
-vim.g.kommentary_create_default_mappings = false
+local M = {}
 
-local utils = require('utils')
-local kommentary = require('kommentary.config')
+function M.setup()
+  vim.g.kommentary_create_default_mappings = false
 
-kommentary.use_extended_mappings()
-kommentary.configure_language('default', {
-  prefer_single_line_comments = true,
-})
+  local kommentary = require('kommentary.config')
 
+  kommentary.use_extended_mappings()
+  kommentary.configure_language('default',
+    { prefer_single_line_comments = true })
+
+end
+
+return M
 -- 以下设置无效
 -- utils.map('n', ' cc', '<Plug>kommentary_line_increase')
 -- utils.map('n', '<leader>ci', '<Plug>kommentary_motion_increase')
