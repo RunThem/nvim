@@ -37,5 +37,7 @@ utils.opt('noswapfile', true)                   -- 禁用交换文件
 utils.opt('noundofile', true)                   -- 禁用undo文件
 -- utils.opt('completeopt', 'menuone,noselect')    -- compe
 
+utils.run('set guicursor=a:ver50-nvcCursor')
+
 -- Highlight on yank
 utils.run('au TextYankPost * lua vim.highlight.on_yank {on_visual = false}')
