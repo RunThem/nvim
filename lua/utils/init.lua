@@ -41,4 +41,14 @@ function M.cmd(autocmds, name)
   vim.cmd('augroup END')
 end
 
+function M.split(str, reps)
+  local t = {}
+  string.gsub(
+    str, '[^' .. reps .. ']+', function(w)
+      table.insert(t, w)
+    end
+  )
+  return t
+end
+
 return M
