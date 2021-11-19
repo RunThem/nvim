@@ -2,8 +2,8 @@ local utils = require('utils')
 
 -- map leader to space
 vim.g.mapleader = ' '
-utils.map('n', ' ', '', { noremap = true })
-utils.map('x', ' ', '', { noremap = true })
+utils.map('n', ' ', '')
+utils.map('x', ' ', '')
 
 -- options = {
 --   noremap = true,
@@ -60,9 +60,9 @@ utils.map('n', ';', ':', { silent = false, nowait = true })
 utils.map('n', 'sh', ':!')
 
 -- Resize the window
-utils.map('n', '<Up>', '<Cmd>res +1<Cr>')
-utils.map('n', '<Down>', '<Cmd>res -1<Cr>')
-utils.map('n', '<Right>', '<Cmd>vert res -1<Cr>')
-utils.map('n', '<Left>', '<Cmd>vert res +1<Cr>')
+utils.map('n', '<Up>', '<Cmd>res -1<Cr>')
+utils.map('n', '<Down>', '<Cmd>res +1<Cr>')
+utils.map('n', '<Right>', '<Cmd>vert res +1<Cr>')
+utils.map('n', '<Left>', '<Cmd>vert res -1<Cr>')
 
 utils.map('n', ' SS', '<Cmd>:w<Cr><Cmd>source ~/.config/nvim/init.lua<Cr>')

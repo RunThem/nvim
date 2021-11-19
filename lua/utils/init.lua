@@ -51,4 +51,9 @@ function M.split(str, reps)
   return t
 end
 
+function M.info(msg)
+  local txt = string.format('MyNvim: %s', msg)
+  vim.notify(txt, vim.log.levels.INFO, { title = 'MyNvim' })
+end
+
 return M

@@ -1,9 +1,6 @@
 local utils = require('utils')
 local fn = vim.fn
 
-require('core.settings')
-require('core.keymaps')
-
 vim.g.python_host_prog = '/usr/bin/python'
 vim.g.python3_host_prog = '/usr/local/bin/python3'
 
@@ -32,4 +29,5 @@ packer.init({
    },
  })
 
-utils.run('autocmd BufWritePost init.lua PackerCompile')
+require('core.settings')
+require('core.keymaps')

@@ -35,9 +35,17 @@ utils.opt('nobackup', true)                     -- 不允许备份文件
 utils.opt('nowritebackup', true)                -- 不允许保存时备份
 utils.opt('noswapfile', true)                   -- 禁用交换文件
 utils.opt('noundofile', true)                   -- 禁用undo文件
--- utils.opt('completeopt', 'menuone,noselect')    -- compe
+utils.opt('completeopt', 'menuone,noselect')    -- compe
+utils.opt('synmaxcol', 240)                     -- 高亮的最大行数
 
-utils.run('set guicursor=a:ver50-nvcCursor')
+-- Set the cursor style
+utils.run('set guicursor=a:ver50-ncvCursor')
+
+-- Remove whitespace on save
+utils.run('au BufWritePre * :%s/\\s\\+$//e')
 
 -- Highlight on yank
 utils.run('au TextYankPost * lua vim.highlight.on_yank {on_visual = false}')
+
+-- Edit the Makefile using indentatin
+utils.run('au FileType make :set expandtab!')
