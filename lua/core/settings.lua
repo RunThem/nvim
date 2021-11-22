@@ -49,3 +49,6 @@ utils.run('au TextYankPost * lua vim.highlight.on_yank {on_visual = false}')
 
 -- Edit the Makefile using indentatin
 utils.run('au FileType make :set expandtab!')
+
+-- Open the file timemark and jump to where it was last exited
+utils.run([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
