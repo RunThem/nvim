@@ -71,99 +71,103 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/LuaSnip"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://hub.fastgit.org/L3MON4D3/LuaSnip"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://hub.fastgit.org/hrsh7th/cmp-buffer"
   },
   ["cmp-calc"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-calc"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-calc",
+    url = "https://hub.fastgit.org/hrsh7th/cmp-calc"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://hub.fastgit.org/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-lua"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://hub.fastgit.org/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://hub.fastgit.org/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://hub.fastgit.org/saadparwaiz1/cmp_luasnip"
   },
-  ["format.nvim"] = {
+  ["formatter.nvim"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/format.nvim"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://hub.fastgit.org/mhartington/formatter.nvim"
   },
   kommentary = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/kommentary"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/kommentary",
+    url = "https://hub.fastgit.org/b3nj5m1n/kommentary"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://hub.fastgit.org/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-cmp"
-  },
-  ["nvim-hlslens"] = {
-    loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-hlslens"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://hub.fastgit.org/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://hub.fastgit.org/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://hub.fastgit.org/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://hub.fastgit.org/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://hub.fastgit.org/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://hub.fastgit.org/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://hub.fastgit.org/nvim-lua/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/popup.nvim"
-  },
-  ["telescope-fzf-native.nvim"] = {
-    loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim"
-  },
-  ["telescope.nvim"] = {
-    loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://hub.fastgit.org/nvim-lua/popup.nvim"
   },
   ["todo-comments.nvim"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://hub.fastgit.org/folke/todo-comments.nvim"
   },
   ["zephyr-nvim"] = {
     loaded = true,
-    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/zephyr-nvim"
+    path = "/home/iccy/.local/share/nvim/site/pack/packer/start/zephyr-nvim",
+    url = "https://hub.fastgit.org/glepnir/zephyr-nvim"
   }
 }
 
