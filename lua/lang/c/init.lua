@@ -9,6 +9,6 @@ lsp.clangd.setup {
     '--clang-tidy',
     '--header-insertion=iwyu',
   },
-  on_attach = config.lsp_config.on_attach,
-  capabilities = config.cmp_config.capabilities,
+  on_attach = config.on_attach,
+  capabilities = config.capabilities,
 }

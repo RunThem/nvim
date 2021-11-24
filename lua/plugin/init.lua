@@ -1,16 +1,28 @@
 local packer = require('packer')
 local utils = require('utils')
 
--- :
+utils.run('packadd packer.nvim')
+
+-- Load the plug-in configuration
 function load(plug, config)
   local package_ok, _ = pcall(require, plug)
   if not package_ok then
     return function()
-	utils.info(plug .. "error")
+	    utils.info(plug .. "error")
     end
   end
   return require('plugin.config.' .. config).setup()
 end
+
+packer.init({
+  max_jobs = 16,
+  git = { default_url_format = 'https://hub.fastgit.org/%s' },
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end,
+   },
+ })
 
 packer.startup(
   {

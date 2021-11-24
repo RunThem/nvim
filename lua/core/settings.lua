@@ -1,6 +1,5 @@
 local utils = require('utils')
 
--- 这两项耗时近40ms
 utils.run('syntax on')
 utils.run('syntax enable')
 utils.run('filetype plugin indent on')

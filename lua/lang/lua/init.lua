@@ -12,8 +12,8 @@ lsp.sumneko_lua.setup({
   cmd = { sumneko_binary, '-E',
           config.path .. '/sumneko_lua/extension/server/main.lua',
           '--locale=zh-cn' },
-  on_attach = config.lsp_config.on_attach,
-  capabilities = config.cmp_config.capabilities,
+  on_attach = config.on_attach,
+  capabilities = config.capabilities,
   settings = {
     Lua = {
       runtime = {

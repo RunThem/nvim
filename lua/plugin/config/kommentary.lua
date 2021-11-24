@@ -11,7 +11,6 @@ function M.setup()
 
 end
 
-return M
 -- 以下设置无效
 -- utils.map('n', ' cc', '<Plug>kommentary_line_increase')
 -- utils.map('n', '<leader>ci', '<Plug>kommentary_motion_increase')
@@ -19,3 +18,5 @@ return M
 -- utils.map('n', ' cu', '<Plug>kommentary_line_decrease')
 -- utils.map('n', '<leader>cd', '<Plug>kommentary_motion_decrease')
 -- utils.map('x', ' cu', '<Plug>kommentary_visual_decrease')
+
+return M
