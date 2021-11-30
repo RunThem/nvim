@@ -7,6 +7,7 @@ utils.opt('expandtab', true)              -- 展开Tab符
 utils.opt('shiftwidth', indent)           -- 设置缩进宽度
 utils.opt('tabstop', indent)              -- 设置Tab宽度
 utils.opt('softtabstop', indent)          -- 如果设置了'expandtab', 那么展开Tab为多少字符
+utils.opt('colorcolumn', 81)              -- 一行超过80字符提示
 utils.opt('laststatus', 2)                -- 总是显示状态栏
 utils.opt('signcolumn', 'number')         -- 总是显示侧边栏(git状态, 诊断消息)
 utils.opt('showtabline', 0)               -- 不显示标签栏
