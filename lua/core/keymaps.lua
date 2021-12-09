@@ -16,12 +16,17 @@ utils.map('x', ' ', '')
 -- Jump line or word
 utils.map('n', '<C-j>', '5j')
 utils.map('n', '<C-k>', '5k')
-utils.map('n', '<C-L>', '3w')
+utils.map('n', '<C-l>', '3w')
 utils.map('n', '<C-h>', '3b')
-utils.map('n', 'j', 'v:count == 0 ? "gj" : "j"', { expr = true })
-utils.map('n', 'k', 'v:count == 0 ? "gk" : "k"', { expr = true })
+-- utils.map('n', 'j', 'v:count == 0 ? "gj" : "j"', { expr = true })
+-- utils.map('n', 'k', 'v:count == 0 ? "gk" : "k"', { expr = true })
 utils.map('n', 'H', '0')
 utils.map('n', 'L', '$')
+utils.map('n', 'J', '')
+utils.map('n', 'K', '')
+
+utils.map('v', 'H', '0')
+utils.map('v', 'L', '$')
 
 -- Replace arrow keys in insert mode
 utils.map('i', '<C-j>', '<Down>')
@@ -37,7 +42,7 @@ utils.map('n', '<leader>l', '<C-w>l', { nowait = true })
 
 -- Jump in the buffer
 utils.map('n', '<leader>n', ':bn<Cr>')
-utils.map('n', '<leader>m', ':bp<Cr>')
+utils.map('n', '<leader>p', ':bp<Cr>')
 utils.map('n', '<leader>d', ':bd<Cr>')
 
 -- clear highlights

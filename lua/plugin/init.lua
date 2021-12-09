@@ -36,6 +36,7 @@ packer.startup(
 
       -- 配色
       use({ 'glepnir/zephyr-nvim' })
+      use({ 'tanvirtin/monokai.nvim' })
       -- 语法高亮
       use(
         {

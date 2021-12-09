@@ -46,7 +46,7 @@ M.on_attach = function(_, bufnr)
     bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]]
   )
 
-  utils.run('command! Format execute "lua vim.lsp.buf.formatting()"')
+  -- utils.run('command! Format execute "lua vim.lsp.buf.formatting()"')
 end
 
 M.path = vim.fn.getenv('HOME') .. '/.local/share/nvim/lsp_servers/'
