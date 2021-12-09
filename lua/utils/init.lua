@@ -33,10 +33,10 @@ function M.run(cmd)
 end
 
 function M.cmd(autocmds, name)
-  vim.cmd('augroup' .. name)
+  vim.cmd('augroup ' .. name)
   vim.cmd('autocmd!')
   for _, autocmd in ipairs(autocmds) do
-    vim.cmd('autocmd' .. table.concat(autocmd, ' '))
+    vim.cmd('autocmd ' .. table.concat(autocmd, ' '))
   end
   vim.cmd('augroup END')
 end

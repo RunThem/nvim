@@ -53,3 +53,8 @@ utils.run('au FileType make :set expandtab!')
 
 -- Open the file timemark and jump to where it was last exited
 utils.run([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
+
+-- Edit mode uses absolute line numbers, and normal mode uses relative line numbers
+utils.cmd({{ 'InsertEnter', '*', ':set', 'norelativenumber' },
+           {'InsertLeave', '*', ':set', 'relativenumber' }},
+           'relative_numbser')

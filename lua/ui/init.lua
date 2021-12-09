@@ -20,10 +20,10 @@ utils.opt('cursorline', true)             -- 高亮当前行
 utils.opt('termguicolors', true)          -- 使用256色终端
 
 utils.run('highlight Normal guibg=NONE guifg=NONE')
-utils.run('highlight LineNr guibg=NONE guifg=#61afaf')
+utils.run('highlight LineNr gui=italic guibg=NONE guifg=#61afaf')
 utils.run('highlight CursorLineNr guibg=NONE guifg=#e95678')
 utils.run('highlight SignColumn guibg=NONE')
-utils.run('highlight Comment cterm=italic gui=italic')
+utils.run('highlight Comment gui=italic')
 
 -- utils.run('echo ' .. vim.api.nvim_buf_get_name())
 vim.o.statusline = '%!luaeval("require(\'ui.line\').statusline()")'
