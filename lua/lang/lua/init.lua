@@ -2,7 +2,7 @@ local lsp = require('lspconfig')
 local config = require('lang')
 
 local sumneko_binary = config.path ..
-                         'sumneko_lua/extension/server/bin/Linux/lua-language-server'
+                         'sumneko_lua/extension/server/bin/lua-language-server'
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
