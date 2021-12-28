@@ -26,4 +26,4 @@ utils.run('highlight SignColumn guibg=NONE')
 utils.run('highlight Comment gui=italic')
 
 -- utils.run('echo ' .. vim.api.nvim_buf_get_name())
-vim.o.statusline = '%!luaeval("require(\'ui.line\').statusline()")'
+-- vim.o.statusline = '%!luaeval("require(\'ui.line\').statusline()")'

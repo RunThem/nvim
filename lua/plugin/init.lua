@@ -46,6 +46,9 @@ packer.startup(
         }
       )
 
+      -- Line
+      use({ 'nvim-lualine/lualine.nvim', config = load('lualine', 'lualine')})
+
       -- 智能括号
       use({ 'windwp/nvim-autopairs', config = load('nvim-autopairs', 'nvim-autopairs') })
 
