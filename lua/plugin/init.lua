@@ -59,7 +59,8 @@ packer.startup(
       use({ 'folke/todo-comments.nvim', config = load('todo-comments', 'todo-comments') })
 
       -- 格式化
-      use({ 'mhartington/formatter.nvim', config = load('formatter', 'formatter') })
+      use({ 'mhartington/formatter.nvim' })
+      -- use({ 'mhartington/formatter.nvim', config = load('formatter', 'formatter') })
 
       -- LSP
       use({ 'neovim/nvim-lspconfig' }) -- Collection of configurations for built-in LSP client
