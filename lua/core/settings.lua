@@ -38,6 +38,7 @@ utils.opt('noswapfile', true)                   -- 禁用交换文件
 utils.opt('noundofile', true)                   -- 禁用undo文件
 utils.opt('completeopt', 'menuone,noselect')    -- compe
 utils.opt('synmaxcol', 240)                     -- 高亮的最大行数
+utils.opt('foldmethod', 'marker')               -- 使用标签折叠
 
 -- Set the cursor style
 utils.run('set guicursor=a:ver50-ncvCursor')

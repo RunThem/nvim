@@ -4,32 +4,19 @@ function M.setup()
   require('formatter').setup(
     {
       filetype = {
-        c = {
-          function()
-            return {
-              exe = 'clang-format',
-              args = {
-                -- '--style="{Language: Cpp, BasedOnStyle: LLVM, AlignConsecutiveAssignments: true, AlignConsecutiveDeclarations: true, AllowShortFunctionsOnASingleLine: Empty, AlwaysBreakBeforeMultilineStrings: true, PointerAlignment: Left, IndentWidth: 2}"',
-                '-i', vim.api.nvim_buf_get_name(0)
-              },
-              stdin = false,
-              cwd = vim.fn.expand('%:p:h')
-            }
-          end
-        },
-        cpp = {
-          function()
-            return {
-              exe = 'clang-format',
-              args = {
-                -- '--style="{Language: Cpp, BasedOnStyle: LLVM, AlignConsecutiveAssignments: true, AlignConsecutiveDeclarations: true, AllowShortFunctionsOnASingleLine: Empty, AlwaysBreakBeforeMultilineStrings: true, PointerAlignment: Left, IndentWidth: 2}"',
-                '-i', vim.api.nvim_buf_get_name(0)
-              },
-              stdin = false,
-              cwd = vim.fn.expand('%:p:h')
-            }
-          end
-        },
+        -- c = {
+        --   function()
+        --     return {
+        --       exe = 'clang-format',
+        --       args = {
+        --         -- '--style="{Language: Cpp, BasedOnStyle: LLVM, AlignConsecutiveAssignments: true, AlignConsecutiveDeclarations: true, AllowShortFunctionsOnASingleLine: Empty, AlwaysBreakBeforeMultilineStrings: true, PointerAlignment: Left, IndentWidth: 2}"',
+        --         '-i', vim.api.nvim_buf_get_name(0)
+        --       },
+        --       stdin = false,
+        --       cwd = vim.fn.expand('%:p:h')
+        --     }
+        --   end
+        -- },
         lua = {
           function()
             return {
