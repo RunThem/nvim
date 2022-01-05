@@ -10,18 +10,6 @@ M.on_attach = function(_, bufnr)
   utils.run('autocmd ColorScheme * highlight NormalFloat guibg=#1f2335')
   utils.run('autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335')
 
-  -- local border = {
-  --   { '🭽', 'FloatBorder' }, { '▔', 'FloatBorder' }, { '🭾', 'FloatBorder' },
-  --   { '▕', 'FloatBorder' }, { '🭿', 'FloatBorder' }, { '▁', 'FloatBorder' },
-  --   { '🭼', 'FloatBorder' }, { '▏', 'FloatBorder' }
-  -- }
-
-  -- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
-  -- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-  --                                                    vim.lsp.handlers.signature_help,
-  --                                                    { border = border }
-  --                                                  )
-
   utils.buf_map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
   utils.buf_map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
   utils.buf_map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
