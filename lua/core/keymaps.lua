@@ -51,6 +51,8 @@ utils.map('n', '<leader>f', '<Cmd>noh<Cr>')
 -- In C code, go to the end of the line and add ';' symbol
 utils.map('i', ';;', '<Esc>A;')
 
+utils.map('i', '.*', '/*  */<Esc>hhi')
+
 -- Save and exit
 utils.map('n', 'S', ':w<Cr>')
 utils.map('n', 'Q', ':q<Cr>')

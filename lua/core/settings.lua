@@ -15,7 +15,7 @@ utils.opt('shiftround', true)                   -- <>缩进为整数倍
 utils.opt('smartcase', true)                    -- 除搜索内容包含大写字母时其他都是忽略大小写
 utils.opt('wildmode', 'list:longest')           -- Tab键显示菜单
 utils.opt('relativenumber', true)               -- 相对行号
-utils.opt('clipboard','unnamed,unnamedplus')    -- 使用系统剪切板
+utils.opt('clipboard','unnamed')                -- 使用系统剪切板, unnamedplus
 utils.opt('matchtime', 1)                       -- 显示括号匹配的时间
 utils.opt('showmatch', true)                    -- 显示匹配的括号
 utils.opt('nocompatible', true)                 -- 不用兼容vim/vi
