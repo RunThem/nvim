@@ -11,9 +11,7 @@ end
 function M.map(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }
 
-  if opts ~= nil then
-    options = vim.tbl_extend('force', options, opts)
-  end
+  if opts ~= nil then options = vim.tbl_extend('force', options, opts) end
 
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
@@ -21,9 +19,7 @@ end
 function M.buf_map(buf, mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }
 
-  if opts ~= nil then
-    options = vim.tbl_extend('force', options, opts)
-  end
+  if opts ~= nil then options = vim.tbl_extend('force', options, opts) end
 
   vim.api.nvim_buf_set_keymap(buf, mode, lhs, rhs, options)
 end
@@ -43,11 +39,9 @@ end
 
 function M.split(str, reps)
   local t = {}
-  string.gsub(
-    str, '[^' .. reps .. ']+', function(w)
-      table.insert(t, w)
-    end
-  )
+  string.gsub(str, '[^' .. reps .. ']+', function(w)
+    table.insert(t, w)
+  end)
   return t
 end
 

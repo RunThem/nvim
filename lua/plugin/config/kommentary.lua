@@ -1,5 +1,7 @@
 local M = {}
 
+-- local utils = require('utils')
+
 function M.setup()
   vim.g.kommentary_create_default_mappings = false
 
@@ -7,7 +9,7 @@ function M.setup()
 
   kommentary.use_extended_mappings()
   kommentary.configure_language('default',
-    { prefer_single_line_comments = true })
+                                { prefer_single_line_comments = true })
 
 end
 

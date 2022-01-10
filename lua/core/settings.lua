@@ -1,8 +1,9 @@
 local utils = require('utils')
 
 utils.run('syntax on')
-utils.run('syntax enable')
-utils.run('filetype plugin indent on')
+utils.run('filetype on')
+utils.run('filetype plugin on')
+utils.run('filetype indent on')
 
 utils.opt('autoindent', true)                   -- C语言格式缩进
 -- utils.opt('mouse', 'a')                         -- 开启鼠标功能
@@ -36,7 +37,7 @@ utils.opt('nobackup', true)                     -- 不允许备份文件
 utils.opt('nowritebackup', true)                -- 不允许保存时备份
 utils.opt('noswapfile', true)                   -- 禁用交换文件
 utils.opt('noundofile', true)                   -- 禁用undo文件
-utils.opt('completeopt', 'menuone,noselect')    -- compe
+utils.opt('completeopt', 'menu,menuone,noselect')    -- compe
 utils.opt('synmaxcol', 240)                     -- 高亮的最大行数
 utils.opt('foldmethod', 'marker')               -- 使用标签折叠
 
