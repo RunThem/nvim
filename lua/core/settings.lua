@@ -5,7 +5,7 @@ utils.run('syntax enable')
 utils.run('filetype plugin indent on')
 
 utils.opt('autoindent', true)                   -- C语言格式缩进
-utils.opt('mouse', 'a')                         -- 开启鼠标功能
+-- utils.opt('mouse', 'a')                         -- 开启鼠标功能
 utils.opt('shortmess', 'sI')
 utils.opt('hidden', true)                       -- 隐藏buffer
 utils.opt('ignorecase', true)                   -- 搜索时忽略大小写
