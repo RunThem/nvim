@@ -28,9 +28,9 @@ function M.setup()
     view = { width = 30, side = 'right', auto_resize = true }
   })
 
-  utils.map('n', ' e', '<Cmd>NvimTreeToggle<cr>')
+  utils.map('n', '<leader>e', '<Cmd>NvimTreeToggle<cr>')
   -- 在文件树中定位当前文件
-  utils.map('n', ' r', '<Cmd>NvimTreeFindFile<cr>')
+  utils.map('n', '<leader>r', '<Cmd>NvimTreeFindFile<cr>')
 end
 
 return M

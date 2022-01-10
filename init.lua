@@ -8,7 +8,7 @@
   ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 
 Neovim init file
-Version: 0.1.1 - 2021/11/23
+Version: 0.2.1 - 2022/01/10
 Maintainer: RunThem
 Website: https://github.com/RunThem/nvim.git
 
@@ -34,3 +34,5 @@ require('ui')
 require('lang')
 require('lang.c')
 require('lang.lua')
+require('lang.rust')
+require('lang.golang')

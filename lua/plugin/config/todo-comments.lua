@@ -13,7 +13,11 @@ function M.setup()
   todo.setup {
     signs = true, -- show icons in the signs column
     keywords = {
-      FIX = { icon = ' ', color = 'error', alt = { 'FIXME', 'BUG', 'FIXIT', 'FIX', 'ISSUE' } },
+      FIX = {
+        icon = ' ',
+        color = 'error',
+        alt = { 'FIXME', 'BUG', 'FIXIT', 'FIX', 'ISSUE' }
+      },
       TODO = { icon = ' ', color = 'info' },
       HACK = { icon = ' ', color = 'warning' },
       WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'XXX' } },
@@ -36,7 +40,10 @@ function M.setup()
     },
     search = {
       command = 'fzf',
-      args = { '--color=never', '--no-heading', '--with-filename', '--line-number', '--column' },
+      args = {
+        '--color=never', '--no-heading', '--with-filename', '--line-number',
+        '--column'
+      },
       -- regex that will be used to match keywords.
       -- don't replace the (KEYWORDS) placeholder
       pattern = [[\b(KEYWORDS):]] -- ripgrep regex

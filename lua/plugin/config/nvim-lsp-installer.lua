@@ -4,8 +4,8 @@ function M.setup()
   local lsp_installer = require('nvim-lsp-installer')
   local lsp_installer_servers = require('nvim-lsp-installer.servers')
 
-  -- lsp: c/cpp, lua, bash
-  local lsp_servers = { 'clangd', 'sumneko_lua', 'bashls' }
+  -- lsp: lua, bash
+  local lsp_servers = { 'sumneko_lua', 'bashls' }
 
   for _, server in ipairs(lsp_servers) do
     local ok, lsp = lsp_installer_servers.get_server(server)

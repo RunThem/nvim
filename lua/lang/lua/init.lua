@@ -9,27 +9,25 @@ table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
 lsp.sumneko_lua.setup({
-  cmd = { sumneko_binary, '-E',
-          config.path .. '/sumneko_lua/extension/server/main.lua',
-          '--locale=zh-cn' },
+  cmd = {
+    sumneko_binary, '-E',
+    config.path .. '/sumneko_lua/extension/server/main.lua'
+  },
   on_attach = config.on_attach,
   capabilities = config.capabilities,
   settings = {
     Lua = {
-      runtime = {
-        version = 'LuaJIT',
-        path = runtime_path,
-       },
+      runtime = { version = 'LuaJIT', path = runtime_path },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-       },
+        globals = { 'vim' }
+      },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file('', true),
-       },
+        library = vim.api.nvim_get_runtime_file('', true)
+      },
       -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = { enable = false },
-     },
-   },
- })
+      telemetry = { enable = false }
+    }
+  }
+})
