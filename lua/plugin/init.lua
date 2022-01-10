@@ -75,11 +75,14 @@ packer.startup({
 
     -- LSP
     use({ 'neovim/nvim-lspconfig' }) -- Collection of configurations for built-in LSP client
+    use({ 'L3MON4D3/LuaSnip', config = load('luasnip', 'luasnip') })
+    use({ 'rafamadriz/friendly-snippets' })
+
     use({
       'hrsh7th/nvim-cmp',
       requires = {
         'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-nvim-lua', 'hrsh7th/cmp-calc', 'L3MON4D3/LuaSnip',
+        'hrsh7th/cmp-nvim-lua', 'hrsh7th/cmp-calc',
         'saadparwaiz1/cmp_luasnip'
       },
       config = load('cmp', 'nvim-cmp')
