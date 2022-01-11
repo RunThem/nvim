@@ -88,10 +88,10 @@ packer.startup({
       config = load('cmp', 'nvim-cmp')
     }) -- Autocompletion plugin
 
-    -- use({
-    --     'williamboman/nvim-lsp-installer',
-    --     config = load('nvim-lsp-installer', 'nvim-lsp-installer')
-    --   })
+    use({
+        'williamboman/nvim-lsp-installer',
+        config = load('nvim-lsp-installer', 'nvim-lsp-installer')
+      })
 
     -- 模糊搜索
     -- use({ 'nvim-telescope/telescope.nvim', load('telescope', 'telescope') })
