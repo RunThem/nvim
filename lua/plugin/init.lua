@@ -11,7 +11,7 @@ function load(plug, config)
       utils.info(plug .. "error")
     end
   end
-  return require('plugin.config.' .. config).setup()
+  return require('plugin.config.' .. config).setup
 end
 
 packer.init({
@@ -51,6 +51,13 @@ packer.startup({
     -- Status Line
     use({ 'nvim-lualine/lualine.nvim', config = load('lualine', 'lualine') })
 
+    use({
+      'luukvbaal/nnn.nvim',
+      config = function()
+        require('nnn').setup()
+      end
+    })
+
     -- 智能括号
     use({
       'windwp/nvim-autopairs',
@@ -82,16 +89,15 @@ packer.startup({
       'hrsh7th/nvim-cmp',
       requires = {
         'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-nvim-lua', 'hrsh7th/cmp-calc',
-        'saadparwaiz1/cmp_luasnip'
+        'hrsh7th/cmp-nvim-lua', 'hrsh7th/cmp-calc', 'saadparwaiz1/cmp_luasnip'
       },
       config = load('cmp', 'nvim-cmp')
     }) -- Autocompletion plugin
 
     use({
-        'williamboman/nvim-lsp-installer',
-        config = load('nvim-lsp-installer', 'nvim-lsp-installer')
-      })
+      'williamboman/nvim-lsp-installer',
+      config = load('nvim-lsp-installer', 'nvim-lsp-installer')
+    })
 
     -- 模糊搜索
     -- use({ 'nvim-telescope/telescope.nvim', load('telescope', 'telescope') })
