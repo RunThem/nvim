@@ -48,6 +48,9 @@ utils.map('n', '<leader>d', ':bd<Cr>')
 -- clear highlights
 utils.map('n', '<leader>f', '<Cmd>noh<Cr>')
 
+-- format source file
+utils.map('n', '<leader>F', ':FormatWrite<Cr>')
+
 -- In C code, go to the end of the line and add ';' symbol
 utils.map('i', ';;', '<Esc>A;')
 
@@ -56,9 +59,6 @@ utils.map('i', '.*', '/*  */<Esc>hhi')
 -- Save and exit
 utils.map('n', 'S', ':w<Cr>')
 utils.map('n', 'Q', ':q<Cr>')
-
--- Open the Neovim configuration file
-utils.map('n', 'nrc', '<Cmd>e ~/.config/nvim/init.lua<Cr>')
 
 -- ';' to ':'
 utils.map('n', ';', ':', { silent = false, nowait = true })
@@ -72,4 +72,5 @@ utils.map('n', '<Down>', '<Cmd>res +1<Cr>')
 utils.map('n', '<Right>', '<Cmd>vert res +1<Cr>')
 utils.map('n', '<Left>', '<Cmd>vert res -1<Cr>')
 
-utils.map('n', ' SS', '<Cmd>:w<Cr><Cmd>source ~/.config/nvim/init.lua<Cr>')
+-- nnn file manger
+utils.map('n', '<leader>r', ':NnnExplorer<Cr>')

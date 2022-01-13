@@ -51,13 +51,6 @@ packer.startup({
     -- Status Line
     use({ 'nvim-lualine/lualine.nvim', config = load('lualine', 'lualine') })
 
-    use({
-      'luukvbaal/nnn.nvim',
-      config = function()
-        require('nnn').setup()
-      end
-    })
-
     -- 智能括号
     use({
       'windwp/nvim-autopairs',
@@ -65,7 +58,13 @@ packer.startup({
     })
 
     -- 文件树
-    use({ 'kyazdani42/nvim-tree.lua', config = load('nvim-tree', 'nvim-tree') })
+    -- use({ 'kyazdani42/nvim-tree.lua', config = load('nvim-tree', 'nvim-tree') })
+    use({
+      'luukvbaal/nnn.nvim',
+      config = function()
+        require('nnn').setup()
+      end
+    })
 
     -- 注释
     use({ 'b3nj5m1n/kommentary', config = load('kommentary', 'kommentary') })
