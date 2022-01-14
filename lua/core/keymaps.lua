@@ -73,4 +73,4 @@ utils.map('n', '<Right>', '<Cmd>vert res +1<Cr>')
 utils.map('n', '<Left>', '<Cmd>vert res -1<Cr>')
 
 -- nnn file manger
-utils.map('n', '<leader>r', ':NnnExplorer<Cr>')
+utils.map('n', '<leader>r', ':NnnPicker<Cr>')

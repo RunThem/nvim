@@ -63,12 +63,7 @@ packer.startup({
 
     -- 文件树
     -- use({ 'kyazdani42/nvim-tree.lua', config = load('nvim-tree', 'nvim-tree') })
-    use({
-      'luukvbaal/nnn.nvim',
-      config = function()
-        require('nnn').setup()
-      end
-    })
+    use({ 'RunThem/nnn.nvim', config = load('nnn') })
 
     -- 注释
     use({ 'b3nj5m1n/kommentary', config = load('kommentary') })
