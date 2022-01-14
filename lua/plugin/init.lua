@@ -37,6 +37,9 @@ packer.startup({
     use({ 'nvim-lua/popup.nvim' })
     use({ 'nvim-lua/plenary.nvim' })
 
+    -- tools
+    use({ 'dstein64/vim-startuptime' })
+
     -- 配色
     use({ 'glepnir/zephyr-nvim' })
     use({ 'tanvirtin/monokai.nvim' })
