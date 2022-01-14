@@ -1,6 +1,7 @@
 local M = {}
 
 function M.setup()
+  local utils = require('utils')
   local lsp_installer = require('nvim-lsp-installer')
   local lsp_installer_servers = require('nvim-lsp-installer.servers')
 
@@ -11,7 +12,7 @@ function M.setup()
     local ok, lsp = lsp_installer_servers.get_server(server)
     if ok then
       if not lsp:is_installed() then
-        -- utils.run('echo "[lsp] install..."')
+        utils.info('[lsp] install...')
         lsp:install()
       end
     end

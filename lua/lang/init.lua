@@ -1,12 +1,14 @@
 local M = {}
 
 local utils = require('utils')
+local lsp = require('cmp_nvim_lsp')
+local protocol = vim.lsp.protocol
 
-M.capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol
-                                                               .make_client_capabilities())
+M.capabilities = lsp.update_capabilities(protocol.make_client_capabilities())
 
 M.on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
   utils.run('autocmd ColorScheme * highlight NormalFloat guibg=#1f2335')
   utils.run(
     'autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335')
@@ -45,4 +47,3 @@ end
 M.path = vim.fn.getenv('HOME') .. '/.local/share/nvim/lsp_servers/'
 
 return M
-

@@ -43,7 +43,7 @@ function M.setup()
     sources = {
       { name = 'nvim_lsp' },
       { name = 'luasnip', options = { use_show_condition = false } }
-    },
+    }
   })
 end
 

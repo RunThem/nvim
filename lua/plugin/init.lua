@@ -1,19 +1,6 @@
 local packer = require('packer')
 local utils = require('utils')
 
-utils.run('packadd packer.nvim')
-
--- Load the plug-in configuration
-function load(plug, config)
-  local package_ok, _ = pcall(require, plug)
-  if not package_ok then
-    return function()
-      utils.info(plug .. "error")
-    end
-  end
-  return require('plugin.config.' .. config).setup
-end
-
 packer.init({
   max_jobs = 16,
   git = { default_url_format = 'https://hub.fastgit.org/%s' },
@@ -23,6 +10,23 @@ packer.init({
     end
   }
 })
+
+-- Load the plug-in configuration
+local function load(...)
+  local args = { ... }
+  local plug = args[1]
+  local config = args[1]
+  if #args == 2 then config = args[2] end
+
+  local package_ok, _ = pcall(require, plug)
+  if not package_ok then
+    return function()
+      utils.info(plug .. " did not load successfully")
+    end
+  end
+
+  return require('plugin.config.' .. config).setup
+end
 
 packer.startup({
   function(use)
@@ -49,13 +53,10 @@ packer.startup({
     })
 
     -- Status Line
-    use({ 'nvim-lualine/lualine.nvim', config = load('lualine', 'lualine') })
+    use({ 'nvim-lualine/lualine.nvim', config = load('lualine') })
 
     -- 智能括号
-    use({
-      'windwp/nvim-autopairs',
-      config = load('nvim-autopairs', 'nvim-autopairs')
-    })
+    use({ 'windwp/nvim-autopairs', config = load('nvim-autopairs') })
 
     -- 文件树
     -- use({ 'kyazdani42/nvim-tree.lua', config = load('nvim-tree', 'nvim-tree') })
@@ -67,21 +68,19 @@ packer.startup({
     })
 
     -- 注释
-    use({ 'b3nj5m1n/kommentary', config = load('kommentary', 'kommentary') })
+    use({ 'b3nj5m1n/kommentary', config = load('kommentary') })
 
     -- Todo清单
-    use({
-      'folke/todo-comments.nvim',
-      config = load('todo-comments', 'todo-comments')
-    })
+    use({ 'folke/todo-comments.nvim', config = load('todo-comments') })
 
     -- 格式化
-    use(
-      { 'mhartington/formatter.nvim', config = load('formatter', 'formatter') })
+    use({ 'mhartington/formatter.nvim', config = load('formatter') })
 
     -- LSP
     use({ 'neovim/nvim-lspconfig' }) -- Collection of configurations for built-in LSP client
-    use({ 'L3MON4D3/LuaSnip', config = load('luasnip', 'luasnip') })
+
+    use({ 'L3MON4D3/LuaSnip', config = load('luasnip') })
+
     use({ 'rafamadriz/friendly-snippets' })
 
     use({
@@ -93,10 +92,8 @@ packer.startup({
       config = load('cmp', 'nvim-cmp')
     }) -- Autocompletion plugin
 
-    use({
-      'williamboman/nvim-lsp-installer',
-      config = load('nvim-lsp-installer', 'nvim-lsp-installer')
-    })
+    use(
+      { 'williamboman/nvim-lsp-installer', config = load('nvim-lsp-installer') })
 
     -- 模糊搜索
     -- use({ 'nvim-telescope/telescope.nvim', load('telescope', 'telescope') })
