@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   require('toggleterm').setup({
-    open_mapping = '<leader>e',
+    open_mapping = '<leader>=',
     hide_numbers = true,
     direction = 'float',
     float_opts = {
