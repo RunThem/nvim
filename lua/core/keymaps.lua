@@ -74,3 +74,7 @@ utils.map('n', '<Left>', '<Cmd>vert res -1<Cr>')
 
 -- nnn file manger
 utils.map('n', '<leader>r', ':NnnPicker<Cr>')
+
+-- split window
+utils.map('n', '<leader>\\', ':vsplit<Cr>')
+utils.map('n', '<leader>|', ':split<Cr>')
