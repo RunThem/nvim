@@ -55,6 +55,9 @@ packer.startup({
       end
     })
 
+    -- terminal
+    use({ 'akinsho/toggleterm.nvim', config = load('toggleterm') })
+
     -- Status Line
     use({ 'nvim-lualine/lualine.nvim', config = load('lualine') })
 
