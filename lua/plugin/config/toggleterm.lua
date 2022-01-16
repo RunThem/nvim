@@ -5,12 +5,13 @@ function M.setup()
     open_mapping = '<C-\\>',
     hide_numbers = true,
     direction = 'float',
+    shading_factor = 2,
     float_opts = {
       border = 'rounded',
       width = 70,
       height = 20,
-      winblend = 3,
-      highlights = { border = 'Normal' }
+      --[[ winblend = 2, ]]
+      highlights = { border = 'VertSplit' }
     }
   })
 end
